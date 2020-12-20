@@ -40,7 +40,7 @@ jobs:
 
       - run: flutter build apk
       
-      - name: save artifact 01
+      - name: Push APK to Releases - save artifact 
         uses: actions/upload-artifact@v2
         with:
           name: apk-artifact
@@ -48,13 +48,8 @@ jobs:
      
 
 
-      - name: Push APK to Releases
-        uses: ncipollo/release-action@v1
-        with:
-          #artifacts: "build/app/outputs/flutter-apk/app-release.apk/*.apk"
-          #token: ${{ secrets.TOKEN }}
-          artifacts: "build/app/outputs/apk/debug/*.apk"
-          token: ${{ secrets.TOKEN }}
+     
+        
 
 
 
