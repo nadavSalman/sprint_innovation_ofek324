@@ -43,7 +43,9 @@ jobs:
       - name: Push APK to Releases
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "build/app/outputs/flutter-apk/app-release.apk/*.apk"
+          #artifacts: "build/app/outputs/flutter-apk/app-release.apk/*.apk"
+          #token: ${{ secrets.TOKEN }}
+          artifacts: "build/app/outputs/apk/debug/*.apk"
           token: ${{ secrets.TOKEN }}
 
 
