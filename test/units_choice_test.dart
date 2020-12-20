@@ -24,9 +24,7 @@ void main() {
       expect(user_choice.makeChoice("Mahan"), false);
     });
 
-    test('Test the behavior of choosing the not preferred unit', () {
-      expect(user_choice.makeChoice("Mahan"), true);
-    });
+
 
   });
 
