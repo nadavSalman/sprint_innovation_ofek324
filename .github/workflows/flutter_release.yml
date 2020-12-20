@@ -40,6 +40,14 @@ jobs:
 
       - run: flutter build apk
       
+      - name: save artifact 01
+        uses: actions/upload-artifact@v2
+        with:
+          name: apk-artifact
+          path: "build/app/outputs/flutter-apk/app-release.apk/*.apk"
+     
+
+
       - name: Push APK to Releases
         uses: ncipollo/release-action@v1
         with:
