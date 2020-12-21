@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Startup Name Generator',
       theme: ThemeData(
-        primaryColor: Colors.blue,
+        primaryColor: Color(0XffF3C33F), //yellow color for appBar
       ),
       home: OpenPage(),
     );

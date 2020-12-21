@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/Components/Floating_plus_button.dart';
+import 'package:flutter_app/Components/Lists_page.dart';
 import 'package:english_words/english_words.dart';
 
 class OpenPage extends StatefulWidget {
@@ -9,7 +9,7 @@ class OpenPage extends StatefulWidget {
 
 class _OpenPageState extends State<OpenPage> {
   @override
-  //ToDo: replacethe groups list with data from DB
+  //ToDo: replace the groups list with data from DB
   final List<String> groups = [
     "hamagnivim",
     "ohad",
@@ -29,6 +29,12 @@ class _OpenPageState extends State<OpenPage> {
         title: Text(
           groups[index ~/ 2].toUpperCase(),
         ),
+        onTap:(){
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ListsPage("ddd")),
+          );
+        },
       );
     } else {
       return Divider();
@@ -41,6 +47,22 @@ class _OpenPageState extends State<OpenPage> {
       itemBuilder: _buildRow,
       itemCount: groups.length * 2,
     );
+  }
+  _showMaterialDialog() {
+    showDialog(
+        context: context,
+        builder: (_) => new AlertDialog(
+          title: new Text("Material Dialog"),
+          content: new Text("Hey! I'm Coflutter!"),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('Close me!'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            )
+          ],
+        ));
   }
 
   @override
@@ -64,7 +86,7 @@ class _OpenPageState extends State<OpenPage> {
         width: 80.0,
         child: FittedBox(
           child: FloatingActionButton(
-            onPressed: () {},
+            onPressed: _showMaterialDialog,
             child: Icon(Icons.add),
             backgroundColor: Colors.black,
             tooltip: 'New group',
@@ -74,3 +96,4 @@ class _OpenPageState extends State<OpenPage> {
     );
   }
 }
+
