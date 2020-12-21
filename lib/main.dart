@@ -3,8 +3,8 @@
 // found in the LICENSE file.
 
 import 'package:flutter/material.dart';
-import 'package:english_words/english_words.dart';
-import 'dart:developer' as developer;//for logs ...
+//import 'package:english_words/english_words.dart';
+// import 'dart:developer' as developer;//for logs ...
 import 'package:startup_namer/random_words.dart';
 
 
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       title: 'Startup Name Generator',
       theme: ThemeData(
         fontFamily: 'Rock Salt',
-        primaryColor: Colors.amber,
+        primaryColor: Colors.teal,
       ),
       home: RandomWords(),
     );
